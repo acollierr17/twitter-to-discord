@@ -1,7 +1,7 @@
 require('dotenv').config();
 const Twitter = require('twitter');
 const { Webhook, MessageBuilder } = require('webhook-discord');
-const { twitter, webHookURL } = require('./config');
+const { twitter, webHookURL, devAccount } = require('./config');
 
 const client = new Twitter(twitter);
 const hook = new Webhook(webHookURL);
@@ -17,16 +17,14 @@ if (process.env.NODE_ENV === 'production') {
 } else {
     tUser = {
         name: 'Nerd',
-        username: 'anthonyDevAcc',
-        id: '1094371754431139840'
+        username: devAccount.username,
+        id: devAccount.userID
     }
 }
 
 console.log('donald-node is now online!');
 
-const params = { follow: tUser.id };
-
-const stream = client.stream('statuses/filter', params);
+const stream = client.stream('statuses/filter', { follow: tUser.id });
 
 stream.on('data', e => {
     newTweet(e.id_str);
@@ -46,7 +44,7 @@ function newTweet(id) {
             const tweetData = mapTweet(t);
 
             const tweetToDiscord = new MessageBuilder()
-                .setName('Other Testing')
+                .setName(tUser.hookName)
                 .setAuthor(tweetData.screenName, tweetData.tweetURL, tweetData.profilePic)
                 .setDescription(tweetData.tweet)
                 .setColor(tweetData.themeColor)
