@@ -1,0 +1,25 @@
+{
+  "name": "donald-node",
+  "version": "1.0.0",
+  "description": "A Node.js application that posts tweets by @realDonaldTrump to a Discord webhook.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acollierr17/donald-node.git"
+  },
+  "author": "acollierr17 <gamemaniac101@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/acollierr17/donald-node/issues"
+  },
+  "homepage": "https://github.com/acollierr17/donald-node#readme",
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "node-fetch": "^2.3.0",
+    "twitter": "^1.7.1",
+    "webhook-discord": "git+https://github.com/acollierr17/webhook-discord.git"
+  }
+}
