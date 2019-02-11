@@ -36,6 +36,8 @@ stream.on('error', error => {
 async function newTweet(id) {
         try {
             const tweet = await client.get('statuses/show', { id });
+            if (tweet.user.id_str !== tUser.id) return;
+
             const tweetData = mapTweet(tweet);
 
             const tweetToDiscord = new MessageBuilder()
