@@ -4,7 +4,9 @@
   "description": "A Node.js application that posts tweets by @realDonaldTrump to a Discord webhook.",
   "main": "app.js",
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "test": "eslint .",
+    "lint": "eslint --fix ."
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,9 @@
     "node-fetch": "^2.3.0",
     "twitter": "^1.7.1",
     "webhook-discord": "git+https://github.com/acollierr17/webhook-discord.git"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.13.0"
   }
 }

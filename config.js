@@ -7,9 +7,5 @@ module.exports = {
         access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
         access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
     },
-    webHookURL: process.env.WEBHOOK_URL,
-    devAccount: {
-        username: process.env.DEV_USERNAME,
-        userID: process.env.DEV_USERID
-    }
+    webHookURL: process.env.WEBHOOK_URL
 };
