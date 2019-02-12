@@ -4,6 +4,8 @@
 
 A Node.js application that posts tweets by [@realDonaldTrump](https://twitter.com/realDonaldTrump) to a Discord webhook.
 
+![](https://i.imgur.com/em4QgSw.png)
+
 ## Pre-requisites
 There are a few pre-requisites you will need to run this application:
 
